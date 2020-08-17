@@ -47,16 +47,16 @@ const getData = async (url='') => {
 };
 
 const updateUI = data => {
-    document.querySelector("#date").innerHTML = data.date;
-    document.querySelector("#temp").innerHTML = data.temperature;
-    document.querySelector("#content").innerHTML = data.userResponse;
+    document.getElementById("date").innerHTML = data.date;
+    document.getElementById("temp").innerHTML = data.temperature;
+    document.getElementById("content").innerHTML = data.userResponse;
 };
 
 
 const generateEntry = () => {
-    const zipCode = document.querySelector("#zip").value;
+    const zipCode = document.getElementById("zip").value;
     getWeather(baseURL,zipCode,apiKey).then((data) => {
-        const userResponse = document.querySelector("#feelings").value;
+        const userResponse = document.getElementById("feelings").value;
         const entry = {
             // generates a new timestamp to have unique ids
             key: +new Date(),
@@ -73,4 +73,4 @@ const generateEntry = () => {
 }
 
 
-document.querySelector("#generate").addEventListener("click", generateEntry);
+document.getElementById("generate").addEventListener("click", generateEntry);
