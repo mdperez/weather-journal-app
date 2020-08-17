@@ -4,7 +4,8 @@ const apiKey = '&appid=3d381da34e0ca6316174ac6da304308b&units=imperial';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
+
 
 const getWeather = async (baseURL, zipCode, key)=>{
     const res = await fetch(baseURL+zipCode+key)
