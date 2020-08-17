@@ -63,7 +63,7 @@ const generateEntry = () => {
             date: newDate,
             userResponse: userResponse
         }
-        postData("/entry", entry).then(() => {
+        postData("/entry", entry).then(() => { 
             getData("/lastEntry").then((data) => {
                 updateUI(data);
             });
